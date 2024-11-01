@@ -1,4 +1,4 @@
-import { Link } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const TimelineData: { date: string; title: string; tags: string[]; url?: string }[] = [
 	{ date: '2024-11-01', title: '제 20회 국제특허정보박람회 부스 전시 참여', tags: ['Conference'], url: 'https://patinex.org' },
@@ -37,7 +37,7 @@ const TimelineSection = () => {
 							<div>
 								<div className={`items-center gap-1.5 flex ${data.url ? 'hover:opacity-70 cursor-pointer transition duration-200' : ''}`}>
 									<span className="transition-all text-gray-200 break-keep">{data.title}</span>
-									{data.url && <Link size={16} className="text-gray-200" onClick={(e) => e.stopPropagation} />}
+									{data.url && <ExternalLink size={16} className="text-gray-200" onClick={(e) => e.stopPropagation} />}
 								</div>
 								{/* <span className="transition-all hover:opacity-70 text-gray-200 break-keep">{data.title}</span> */}
 								<div className="flex flex-wrap gap-1">
