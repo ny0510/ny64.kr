@@ -32,7 +32,7 @@ const TimelineSection = () => {
 							<time dateTime={data.date} className="min-w-[100px] text-gray-400">
 								{new Date(data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })}
 							</time>
-							<div className="flex flex-row items-center gap-2">
+							<div>
 								<span className="transition-all text-gray-200 break-keep">{data.title}</span>
 								{/* <span className="transition-all hover:opacity-70 text-gray-200 break-keep">{data.title}</span> */}
 								<div className="flex flex-wrap gap-1">
