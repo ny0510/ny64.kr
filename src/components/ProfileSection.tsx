@@ -27,7 +27,7 @@ const ProfileSection = () => {
 
 	return (
 		<div className="flex flex-col items-center justify-center h-full gap-1">
-			<img src={Profile} alt="Profile" className="rounded-full h-32 w-32" />
+			<img src={Profile} alt="Profile" className="rounded-full h-32 w-32 hover:animate-spin-fast" />
 			<div className="flex flex-col items-center justify-center gap-4">
 				<h1 className="text-3xl font-bold mt-4">NY64</h1>
 				<div className="flex flex-row items-center rounded-3xl px-4 py-2 text-sm border border-neutral-800 hover:border-neutral-500 transition duration-500 gap-1">

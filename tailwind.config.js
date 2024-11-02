@@ -9,6 +9,9 @@ export default {
 			screens: {
 				smm: '320px',
 			},
+			animation: {
+				'spin-fast': 'spin 0.2s linear infinite',
+			},
 		},
 	},
 	plugins: [],
