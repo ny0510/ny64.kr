@@ -1,3 +1,8 @@
+const ProjectsData: { title: string; description: string; link: string; image: string }[] = [
+	{ title: 'Dummy Project 1', description: 'This is a dummy project.', link: 'https://github.com/NY0510', image: '/a.png' },
+	{ title: 'Dummy Project 2', description: 'This is a dummy project.', link: 'https://github.com/NY0510', image: '/asdf.png' },
+];
+
 const ProjectsSection = () => {
 	return (
 		<section id="projects" className="flex flex-col gap-y-5 md:flex-row md:gap-y-0">
@@ -6,10 +11,9 @@ const ProjectsSection = () => {
 			</div>
 			<div className="flex flex-col gap-y-3 md:w-2/3">
 				<div className="grid grid-cols-1 gap-4 smm:grid-cols-1 sm:grid-cols-2">
-					<ProjectCard title="NM" description="Lavalink Discord Music Bot" link="https://github.com/NY0510/NM-New" image="/a.png" />
-					<ProjectCard title="NM" description="Lavalink Discord Music Bot" link="https://github.com/NY0510/NM-New" image="/asdf.png" />
-					<ProjectCard title="NM" description="Lavalink Discord Music Bot" link="https://github.com/NY0510/NM-New" image="/asdf.png" />
-					<ProjectCard title="NM" description="Lavalink Discord Music Bot" link="https://github.com/NY0510/NM-New" image="/a.png" />
+					{ProjectsData.map((data, index) => (
+						<ProjectCard key={index} title={data.title} description={data.description} link={data.link} image={data.image} />
+					))}
 				</div>
 			</div>
 		</section>
