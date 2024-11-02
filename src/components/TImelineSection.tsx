@@ -35,11 +35,10 @@ const TimelineSection = () => {
 								{new Date(data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })}
 							</time>
 							<div>
-								<div className={`items-center gap-1.5 flex ${data.url ? 'hover:opacity-70 cursor-pointer transition duration-200' : ''}`}>
+								<a className={`items-center gap-1.5 flex ${data.url ? 'hover:opacity-70 cursor-pointer transition duration-200' : ''}`} href={data.url} target="_blank" rel="noreferrer">
 									<span className="transition-all text-gray-200 break-keep">{data.title}</span>
 									{data.url && <ExternalLink size={16} className="text-gray-200" onClick={(e) => e.stopPropagation} />}
-								</div>
-								{/* <span className="transition-all hover:opacity-70 text-gray-200 break-keep">{data.title}</span> */}
+								</a>
 								<div className="flex flex-wrap gap-1">
 									{data.tags.map((tag, tagIndex) => (
 										<span key={tagIndex} className="text-sm text-gray-500">
