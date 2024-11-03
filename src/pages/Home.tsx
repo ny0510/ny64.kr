@@ -1,7 +1,7 @@
 import ProfileSection from '../components/ProfileSection';
 import AboutSection from '../components/AboutSection';
 import ProjectsSection from '../components/ProjectsSection';
-import TimelineSection from '../components/TImelineSection';
+import TimelineSection from '../components/TimelineSection.tsx';
 
 const Home = () => {
 	return (
