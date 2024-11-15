@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react';
 
 const TimelineData: { date: string; title: string; tags: string[]; url?: string }[] = [
-	{ date: '2024-11-01', title: '제 20회 국제특허정보박람회 부스 전시 참여', tags: ['Conference'], url: 'https://patinex.org' },
+	{ date: '2024-11-01', title: '제 20회 국제특허정보박람회 부스 전시', tags: ['Conference'], url: 'https://patinex.org' },
 	{ date: '2024-10-29', title: '한국코드페어 SW 공모전 동상 수상', tags: ['Award'], url: 'https://www.kcf.or.kr/notice/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=123951920' },
 	{ date: '2024-10-04', title: '리눅스마스터 2급 자격증 취득', tags: ['Certification'] },
 	{ date: '2024-09-20', title: 'Gencon 2024 AI Conference for DEV 참여', tags: ['Conference'], url: 'https://gencon2024.fastcampus.co.kr' },
