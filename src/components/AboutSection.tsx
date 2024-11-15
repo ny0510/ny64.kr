@@ -6,7 +6,7 @@ const AboutSection = () => {
 			</div>
 			<div className="flex flex-col gap-y-3 md:w-2/3">
 				<p className="text-neutral-300">
-					안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요
+					안녕하세요 <span className="font-bold">NY64</span> 라는 이름으로 활동하고 있는 김가온 입니다.
 				</p>
 			</div>
 		</section>
