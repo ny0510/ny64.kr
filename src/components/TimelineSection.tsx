@@ -10,7 +10,7 @@ const TimelineData: { date: string; title: string; tags: string[]; url?: string 
 	{ date: '2024-04-18', title: '홈서버 CPU 업그레이드 (R7 5700X)', tags: ['HomeLab'] },
 	{ date: '2023-11-09', title: '콘텐츠유니버스 코리아 테크 해커톤 본선 진출', tags: ['Hackathon'], url: 'https://contentsuniverse.com/kr/2023contest' },
 	{ date: '2023-09-09', title: 'UbuCon Korea 2023 참여', tags: ['Conference'], url: 'https://2023.ubuntu-kr.org/ko' },
-	{ date: '2023-03-02', title: '선린인터넷고등학교 입학', tags: ['Education'] },
+	{ date: '2023-03-02', title: '선린인터넷고등학교 118기 소프트웨어과 합격', tags: ['Education'] },
 	{ date: '2023-01-07', title: 'x86 홈서버 구축 (R5 4650G)', tags: ['HomeLab'] },
 	{ date: '2022-08-23', title: '우분투 CD 미러 구축', tags: ['Project'], url: 'https://mirror.mahiro.kr/ubuntu-releases' },
 	{ date: '2021-11-23', title: '개발 블로그 시작', tags: ['Project'], url: 'https://blog.ny64.kr' },
