@@ -24,10 +24,10 @@ const TimelineData: { date: string; title: string; tags: string[]; url?: string 
 const TimelineSection = () => {
 	return (
 		<section id="timeline" className="flex flex-col gap-y-5 md:flex-row md:gap-y-0">
-			<div className="text-xl font-semibold md:w-1/3">
+			<div className="text-xl font-semibold md:w-1/4">
 				<h2>Timeline</h2>
 			</div>
-			<div className="flex flex-col gap-y-3 md:w-2/3">
+			<div className="flex flex-col gap-y-3 md:w-3/4">
 				<ul className="flex flex-col gap-y-2">
 					{TimelineData.map((data, index) => (
 						<li key={index} className="flex flex-col gap-2 sm:flex-row sm:gap-x-4 basis-full px-3 py-1 rounded-md transition-all">
