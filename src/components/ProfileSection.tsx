@@ -4,6 +4,12 @@ import Profile from '../assets/profile.webp';
 
 const birthday = new Date('2007-02-06');
 
+const ProfileLink = ({ href, icon: Icon }: { href: string; icon: React.ElementType }) => (
+	<a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 p-2 font-medium transition duration-200 hover:opacity-70">
+		<Icon size={22} />
+	</a>
+);
+
 const ProfileSection = () => {
 	const [afterBirth, setAfterBirth] = useState<string>('');
 	const [tenThousands, setTenThousands] = useState<number>(0);
@@ -35,18 +41,10 @@ const ProfileSection = () => {
 					<span className={`tabular-nums transition duration-200 ease-in-out ${animate ? 'text-neutral-100' : 'text-neutral-400'}`}>{afterBirth} ms</span>
 				</div>
 				<div className="text-center">
-					<a href="https://github.com/ny0510" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 p-2 font-medium transition duration-200 hover:opacity-70">
-						<Github size={22} />
-					</a>
-					<a href="mailto:me@ny64.kr" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 p-2 font-medium transition duration-200 hover:opacity-70">
-						<Mail size={22} />
-					</a>
-					<a href="https://paypal.me/ny64" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 p-2 font-medium transition duration-200 hover:opacity-70">
-						<Coffee size={22} />
-					</a>
-					<a href="https://blog.ny64.kr/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 p-2 font-medium transition duration-200 hover:opacity-70">
-						<Rss size={22} />
-					</a>
+					<ProfileLink href="https://github.com/ny0510" icon={Github} />
+					<ProfileLink href="mailto:me@ny64.kr" icon={Mail} />
+					<ProfileLink href="https://paypal.me/ny64" icon={Coffee} />
+					<ProfileLink href="https://blog.ny64.kr/" icon={Rss} />
 				</div>
 			</div>
 		</div>

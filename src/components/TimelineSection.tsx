@@ -21,6 +21,28 @@ const TimelineData: { date: string; title: string; tags: string[]; url?: string 
 	{ date: '2016-10-15', title: '청소년로봇연맹 창의로봇자격증 취득', tags: ['Certification'] },
 ];
 
+const TimelineItem = ({ data }: { data: { date: string; title: string; tags: string[]; url?: string } }) => (
+	<li className="flex flex-col gap-2 sm:flex-row sm:gap-x-4 basis-full px-3 py-1 rounded-md transition-all">
+		<time dateTime={data.date} className="min-w-[100px] text-gray-400">
+			{new Date(data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })}
+		</time>
+		<div>
+			<a className={`items-center gap-1.5 flex ${data.url ? 'hover:opacity-70 cursor-pointer transition duration-200' : ''}`} href={data.url} target="_blank" rel="noreferrer">
+				<span className="transition-all text-gray-200 break-keep">{data.title}</span>
+				{data.url && <ExternalLink size={16} className="text-gray-200" onClick={(e) => e.stopPropagation()} />}
+			</a>
+			<div className="flex flex-wrap gap-1">
+				{data.tags.map((tag, tagIndex) => (
+					<span key={tagIndex} className="text-sm text-gray-500">
+						{tag}
+						{tagIndex < data.tags.length - 1 && <span className="mx-1">•</span>}
+					</span>
+				))}
+			</div>
+		</div>
+	</li>
+);
+
 const TimelineSection = () => {
 	return (
 		<section id="timeline" className="flex flex-col gap-y-5 md:flex-row md:gap-y-0">
@@ -30,25 +52,7 @@ const TimelineSection = () => {
 			<div className="flex flex-col gap-y-3 md:w-3/4">
 				<ul className="flex flex-col gap-y-2">
 					{TimelineData.map((data, index) => (
-						<li key={index} className="flex flex-col gap-2 sm:flex-row sm:gap-x-4 basis-full px-3 py-1 rounded-md transition-all">
-							<time dateTime={data.date} className="min-w-[100px] text-gray-400">
-								{new Date(data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })}
-							</time>
-							<div>
-								<a className={`items-center gap-1.5 flex ${data.url ? 'hover:opacity-70 cursor-pointer transition duration-200' : ''}`} href={data.url} target="_blank" rel="noreferrer">
-									<span className="transition-all text-gray-200 break-keep">{data.title}</span>
-									{data.url && <ExternalLink size={16} className="text-gray-200" onClick={(e) => e.stopPropagation} />}
-								</a>
-								<div className="flex flex-wrap gap-1">
-									{data.tags.map((tag, tagIndex) => (
-										<span key={tagIndex} className="text-sm text-gray-500">
-											{tag}
-											{tagIndex < data.tags.length - 1 && <span className="mx-1">•</span>}
-										</span>
-									))}
-								</div>
-							</div>
-						</li>
+						<TimelineItem key={index} data={data} />
 					))}
 				</ul>
 			</div>
