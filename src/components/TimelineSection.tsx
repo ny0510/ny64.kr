@@ -14,11 +14,6 @@ const TimelineData: { date: string; title: string; tags: string[]; url?: string 
 	{ date: '2023-01-07', title: 'x86 홈서버 구축 (R5 4650G)', tags: ['HomeLab'] },
 	{ date: '2022-08-23', title: '우분투 CD 미러 구축', tags: ['Project'], url: 'https://mirror.mahiro.kr/ubuntu-releases' },
 	{ date: '2021-11-23', title: '개발 블로그 시작', tags: ['Project'], url: 'https://blog.ny64.kr' },
-	{ date: '2019-10-18', title: 'GTQ 2급 자격증 취득', tags: ['Certification'] },
-	{ date: '2018-02-01', title: 'ITQ 한셀 1급 자격증 취득', tags: ['Certification'] },
-	{ date: '2017-09-28', title: 'ITQ 한글 2급 자격증 취득', tags: ['Certification'] },
-	{ date: '2017-06-29', title: 'ITQ 한쇼 1급 자격증 취득', tags: ['Certification'] },
-	{ date: '2016-10-15', title: '청소년로봇연맹 창의로봇자격증 취득', tags: ['Certification'] },
 ];
 
 const TimelineItem = ({ data }: { data: { date: string; title: string; tags: string[]; url?: string } }) => (
