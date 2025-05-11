@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import AboutMeSection from '@/components/AboutMeSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import AchievementsSection from '@/components/AchievementsSection';
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutMeSection />
       <ProjectsSection />
       <AchievementsSection />
+      <Footer />
     </main>
   );
 }
