@@ -2,8 +2,10 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AboutMeSection from '@/components/AboutMeSection';
+import ExtraInfoSection from '@/components/ExtraInfoSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import AchievementsSection from '@/components/AchievementsSection';
+import SideNotesSection from '@/components/SideNotesSection';
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <AboutMeSection />
       <ProjectsSection />
       <AchievementsSection />
+      {/* <ExtraInfoSection /> */}
+      <SideNotesSection />
       <Footer />
     </main>
   );
