@@ -22,7 +22,7 @@ export default function AchievementsSection() {
           <li key={idx}>
             <div className="flex flex-col items-start justify-between sm:flex-row sm:items-center">
               <div className="flex flex-col items-start gap-x-2 sm:flex-row sm:items-center">
-                <span className="text-sm text-muted-foreground min-w-[52px]">[{new Date(item.date).toLocaleString('en-US', { month: 'short', year: '2-digit' })}]</span>
+                <span className="text-sm text-muted-foreground tabular-nums">[{new Date(item.date).getFullYear()}]</span>
                 {item.url ? (
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="font-medium text-base flex items-center gap-x-2 px-0.5">
                     {item.title}
