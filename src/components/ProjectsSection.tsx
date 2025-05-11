@@ -13,7 +13,7 @@ const projects = [
     name: 'NY0510/slunchv2',
     url: 'https://github.com/NY0510/slunchv2',
     desc: '급식, 시간표 및 학사일정',
-    detail: '전국 초·중·고 급식, 시간표, 학사일정을 제공하는 React Native 기반 네이티브 앱입니다',
+    detail: '전국 초·중·고 급식, 시간표, 학사일정을 제공하는 React Native 기반 네이티브 앱입니다.',
     tags: ['TypeScript', 'React Native'],
   },
   {
