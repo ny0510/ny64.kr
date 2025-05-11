@@ -1,35 +1,15 @@
-import { serve } from "bun";
-import index from "./index.html";
+import { env, serve } from 'bun';
+import index from './index.html';
 
 const server = serve({
   routes: {
-    // Serve index.html for all unmatched routes.
-    "/*": index,
-
-    "/api/hello": {
-      async GET(req) {
-        return Response.json({
-          message: "Hello, world!",
-          method: "GET",
-        });
-      },
-      async PUT(req) {
-        return Response.json({
-          message: "Hello, world!",
-          method: "PUT",
-        });
-      },
-    },
-
-    "/api/hello/:name": async req => {
-      const name = req.params.name;
-      return Response.json({
-        message: `Hello, ${name}!`,
-      });
-    },
+    '/*': index,
+    '/ads.txt': new Response(process.env.GOOGLE_AD_CODE, { headers: { 'Content-Type': 'text/plain' } }),
+    '/app-ads.txt': new Response(process.env.GOOGLE_AD_CODE, { headers: { 'Content-Type': 'text/plain' } }),
+    '/robots.txt': new Response('User-agent: *\nAllow: /ads.txt\nAllow: /app-ads.txt', { headers: { 'Content-Type': 'text/plain' } }),
   },
 
-  development: process.env.NODE_ENV !== "production" && {
+  development: process.env.NODE_ENV !== 'production' && {
     // Enable browser hot reloading in development
     hmr: true,
 
