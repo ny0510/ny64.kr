@@ -1,7 +1,7 @@
 import React from 'react';
 import SocialLinks from '@/components/SocialLinks';
 
-export default function ProfileHeader() {
+export default function Header() {
   return (
     <header className="space-y-2">
       <div>
