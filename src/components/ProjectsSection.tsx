@@ -3,25 +3,18 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 
 const projects = [
   {
-    name: 'NY0510/NM-TS',
-    url: 'https://github.com/NY0510/NM-TS',
-    desc: 'Discord.js + Lavalink',
-    detail: 'Discord.js와 Lavalink를 기반으로 개발된 디스코드 음악 봇입니다.',
-    tags: ['TypeScript', 'Discord.js'],
-  },
-  {
-    name: 'NY0510/slunchv2',
+    name: 'NYL',
     url: 'https://github.com/NY0510/slunchv2',
-    desc: '급식, 시간표 및 학사일정',
-    detail: '전국 초·중·고 급식, 시간표, 학사일정을 제공하는 React Native 기반 네이티브 앱입니다.',
-    tags: ['TypeScript', 'React Native'],
+    desc: '급식, 시간표, 학사일정',
+    detail: '전국 중·고등학교 급식, 시간표, 학사일정을 제공하는 React Native 기반 네이티브 앱입니다.',
+    tags: ['React Native', 'ElysiaJS'],
   },
   {
-    name: 'NY0510/blog',
-    url: 'https://github.com/NY0510/blog',
-    desc: '개인 개발 블로그',
-    detail: '정적 사이트 생성기인 Hugo를 기반으로 개발된 개인 블로그입니다.',
-    tags: ['Hugo'],
+    name: 'Arkia',
+    // url: 'https://f.ny64.kr/temp/sunrinthon2025/Arkia.pdf',
+    desc: '딸깍으로 골라 담는 나만의 LLM',
+    detail: '복잡한 RAG 파이프라인 구축 과정을 자동화하여, 누구나 간편하게 맞춤형 파이프라인을 만들고 활용할 수 있도록 돕는 서비스입니다.',
+    tags: ['RAG', 'LLM', 'FastAPI', 'React'],
   },
 ];
 
@@ -34,10 +27,14 @@ export default function ProjectsSection() {
           <div className="space-y-2" key={idx}>
             <div className="space-y-1">
               <div className="flex justify-between items-center gap-y-2 gap-x-4">
-                <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-lg text-nowrap items-center gap-x-2">
-                  {project.name}
-                  <SquareArrowOutUpRight size={16} />
-                </a>
+                {project.url ? (
+                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-lg text-nowrap items-center gap-x-2">
+                    {project.name}
+                    <SquareArrowOutUpRight size={16} />
+                  </a>
+                ) : (
+                  <span className="text-lg font-medium">{project.name}</span>
+                )}
                 <span className="text-sm text-muted-foreground text-nowrap">{project.desc}</span>
               </div>
               <div>
