@@ -2,7 +2,7 @@ import React from 'react';
 import { SquareArrowOutUpRight } from 'lucide-react';
 
 const achievements = [
-  { date: '2025-09-21', title: "제 1회 Daangn Builder's Camp 해커톤 (1위)", tags: ['Award'] },
+  { date: '2025-09-21', title: "제 1회 Daangn Builder's Camp 해커톤 (1위)", tags: ['Award'], url:"https://about.daangn.com/blog/archive/%EB%8B%B9%EA%B7%BC-%ED%95%B4%EC%BB%A4%ED%86%A4-%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EC%B1%84%EC%9A%A9/" },
   { date: '2025-09-21', title: "제 1회 Daangn Builder's Camp 수료", tags: ['Education'] },
   { date: '2024-11-01', title: '제 20회 국제특허정보박람회 (PATINEX) 부스 운영', tags: ['Conference'], url: 'https://patinex.org' },
   { date: '2024-10-29', title: '한국코드페어 SW 공모전 동상 (3위)', tags: ['Award'], url: 'https://www.kcf.or.kr/notice/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=123951920' },
