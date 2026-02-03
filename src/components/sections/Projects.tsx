@@ -10,12 +10,19 @@ const projects = [
     tags: ['React Native', 'ElysiaJS'],
   },
   {
-    name: 'Arkia',
-    // url: 'https://f.ny64.kr/temp/sunrinthon2025/Arkia.pdf',
-    desc: '딸깍으로 골라 담는 나만의 LLM',
-    detail: '복잡한 RAG 파이프라인 구축 과정을 자동화하여, 누구나 간편하게 맞춤형 파이프라인을 만들고 활용할 수 있도록 돕는 서비스입니다.',
-    tags: ['RAG', 'LLM', 'FastAPI', 'React'],
+    name: 'NM',
+    url: 'https://github.com/NY0510/NM-TS',
+    detail: 'Discord.js와 Lavalink를 기반으로 한 고성능 디스코드 음악 봇입니다.',
+    desc: '디스코드 음악 봇',
+    tags: ['TypeScript', 'Discord.js', 'Lavalink'],
   },
+  // {
+  //   name: 'Arkia',
+  //   // url: 'https://f.ny64.kr/temp/sunrinthon2025/Arkia.pdf',
+  //   desc: '딸깍으로 골라 담는 나만의 LLM',
+  //   detail: '복잡한 RAG 파이프라인 구축 과정을 자동화하여, 누구나 간편하게 맞춤형 파이프라인을 만들고 활용할 수 있도록 돕는 서비스입니다.',
+  //   tags: ['RAG', 'LLM', 'FastAPI', 'React'],
+  // },
 ];
 
 export default function ProjectsSection() {
