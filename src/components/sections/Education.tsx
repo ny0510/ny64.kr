@@ -4,7 +4,7 @@ import { education } from '@/data/content';
 function formatPeriod(start: string, end: string = ''): string {
   const startFormatted = start.replace('-', '.');
   const endFormatted = end.replace('-', '.');
-  return `${startFormatted} ~ ${endFormatted}`;
+  return `${startFormatted} – ${endFormatted}`;
 }
 
 export default function EducationSection() {
