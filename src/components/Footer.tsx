@@ -1,9 +1,10 @@
 import React from 'react';
+import { footer } from '@/data/content';
 
 export default function Footer() {
   return (
     <footer className="text-sm text-muted-foreground">
-      <p>&copy; 2025 ny64. All rights reserved.</p>
+      <p>{footer.copyright}</p>
     </footer>
   );
 }

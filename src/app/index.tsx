@@ -1,7 +1,7 @@
 import '@/index.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
-import Home from './pages/home';
+import Home from '@/app/pages/home';
 
 export function App() {
   return (

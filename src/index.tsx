@@ -4,8 +4,8 @@ import index from './index.html';
 const server = serve({
   routes: {
     '/*': index,
-    '/ads.txt': new Response(process.env.GOOGLE_AD_CODE, { headers: { 'Content-Type': 'text/plain' } }),
-    '/app-ads.txt': new Response(process.env.GOOGLE_AD_CODE, { headers: { 'Content-Type': 'text/plain' } }),
+    '/ads.txt': new Response(env.GOOGLE_AD_CODE, { headers: { 'Content-Type': 'text/plain' } }),
+    '/app-ads.txt': new Response(env.GOOGLE_AD_CODE, { headers: { 'Content-Type': 'text/plain' } }),
     '/robots.txt': new Response('User-agent: *\nAllow: /ads.txt\nAllow: /app-ads.txt', { headers: { 'Content-Type': 'text/plain' } }),
   },
 
