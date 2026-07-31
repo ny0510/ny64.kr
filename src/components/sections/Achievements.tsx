@@ -1,32 +1,36 @@
 import React from 'react';
 import { achievements } from '@/data/content';
 import Badge from '@/components/Badge';
+import { formatPeriod } from '@/lib/utils';
 
 export default function AchievementsSection() {
   return (
     <section className="space-y-3">
       <h3 className="text-xl font-medium">활동</h3>
-      <ul className="space-y-2">
+      <div className="space-y-5">
         {achievements.map((item, idx) => (
-          <li key={idx} className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-1 text-base sm:flex sm:flex-wrap sm:items-center">
-            <span className="tabular-nums text-muted-foreground">{item.date.replace('-', '.').slice(0, 7)}</span>
-            {item.url ? (
-              <a href={item.url} target="_blank" rel="noopener noreferrer" className="min-w-0 underline decoration-border underline-offset-4 hover:decoration-foreground">
-                {item.title}
-              </a>
-            ) : (
-              <span>{item.title}</span>
-            )}
-            {item.tags && item.tags.length > 0 && (
-              <div className="col-start-2 flex flex-wrap gap-1 sm:ml-auto">
-                {item.tags.map((tag, i) => (
-                  <Badge key={i}>{tag}</Badge>
-                ))}
+          <article key={idx} className="space-y-1.5">
+            <div className="flex flex-col items-start gap-y-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-x-4 sm:gap-y-1">
+              <div className="flex flex-col items-start gap-y-1 sm:flex-row sm:items-center sm:gap-x-1.5">
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-border underline-offset-4 hover:decoration-foreground">
+                    {item.title}
+                  </a>
+                ) : (
+                  <span className="font-medium">{item.title}</span>
+                )}
+                <div className="flex flex-wrap gap-1">
+                  {item.tags.map((tag, i) => (
+                    <Badge key={i}>{tag}</Badge>
+                  ))}
+                </div>
               </div>
-            )}
-          </li>
+              <span className="text-xs text-muted-foreground tabular-nums">{formatPeriod(item.start, item.end)}</span>
+            </div>
+            {item.detail && <p className="text-base leading-6 text-muted-foreground">{item.detail}</p>}
+          </article>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

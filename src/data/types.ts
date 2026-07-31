@@ -1,6 +1,8 @@
 export interface Achievement {
-  date: string;
+  start: string;
+  end?: string;
   title: string;
+  detail?: string;
   tags: string[];
   url?: string;
 }

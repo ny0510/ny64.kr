@@ -1,11 +1,6 @@
 import React from 'react';
 import { education } from '@/data/content';
-
-function formatPeriod(start: string, end?: string): string {
-  const startFormatted = start.replace('-', '.');
-  const endFormatted = end ? end.replace('-', '.') : '현재';
-  return `${startFormatted} – ${endFormatted}`;
-}
+import { formatPeriod } from '@/lib/utils';
 
 export default function EducationSection() {
   return (
