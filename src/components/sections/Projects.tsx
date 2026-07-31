@@ -19,7 +19,7 @@ export default function ProjectsSection() {
                   ) : (
                     <span className="font-medium">{project.name}</span>
                   )}
-                  <div className="flex flex-wrap gap-1">
+                  <div className="hidden flex-wrap gap-1 sm:flex">
                     {project.tags.map((tag, i) => (
                       <Badge key={i}>{tag}</Badge>
                     ))}
@@ -28,6 +28,11 @@ export default function ProjectsSection() {
                 <span className="text-xs text-muted-foreground">{project.desc}</span>
               </div>
               <p className="mt-1 text-base leading-6 text-muted-foreground">{project.detail}</p>
+              <div className="mt-1.5 flex flex-wrap gap-1 sm:hidden">
+                {project.tags.map((tag, i) => (
+                  <Badge key={i}>{tag}</Badge>
+                ))}
+              </div>
             </div>
           </article>
         ))}

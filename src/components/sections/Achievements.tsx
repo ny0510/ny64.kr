@@ -19,7 +19,7 @@ export default function AchievementsSection() {
                 ) : (
                   <span className="font-medium">{item.title}</span>
                 )}
-                <div className="flex flex-wrap gap-1">
+                <div className="hidden flex-wrap gap-1 sm:flex">
                   {item.tags.map((tag, i) => (
                     <Badge key={i}>{tag}</Badge>
                   ))}
@@ -28,6 +28,11 @@ export default function AchievementsSection() {
               <span className="text-xs text-muted-foreground tabular-nums">{formatPeriod(item.start, item.end)}</span>
             </div>
             {item.detail && <p className="text-base leading-6 text-muted-foreground">{item.detail}</p>}
+            <div className="flex flex-wrap gap-1 sm:hidden">
+              {item.tags.map((tag, i) => (
+                <Badge key={i}>{tag}</Badge>
+              ))}
+            </div>
           </article>
         ))}
       </div>
