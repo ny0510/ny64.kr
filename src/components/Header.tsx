@@ -4,12 +4,12 @@ import { header } from '@/data/content';
 
 export default function Header() {
   return (
-    <header className="space-y-2">
-      <div>
-        <a href={`mailto:${header.email}`}>
-          <h1 className="text-4xl font-bold font-ridibatang">{header.email}</h1>
-        </a>
-        <h2 className="text-base text-muted-foreground">{header.tagline}</h2>
+    <header className="space-y-3">
+      <div className="space-y-1">
+        <h1 className="text-[32px] font-bold tracking-tight">
+          {header.name} <span className="text-2xl font-normal text-muted-foreground tracking-normal">@{header.username}</span>
+        </h1>
+        {/* <p className="text-base text-muted-foreground">{header.tagline}</p> */}
       </div>
       <SocialLinks />
     </header>

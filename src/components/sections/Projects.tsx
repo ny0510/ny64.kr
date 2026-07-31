@@ -1,37 +1,35 @@
 import React from 'react';
-import { SquareArrowOutUpRight } from 'lucide-react';
 import { projects } from '@/data/content';
 import Badge from '@/components/Badge';
 
 export default function ProjectsSection() {
   return (
-    <section className="break-keep wrap-break-word">
-      <h3 className="text-2xl font-normal mb-2">프로젝트</h3>
-      <div className="space-y-6">
+    <section className="space-y-3">
+      <h3 className="text-xl font-medium">프로젝트</h3>
+      <div className="space-y-5">
         {projects.map((project, idx) => (
-          <div className="space-y-2" key={idx}>
+          <article className="space-y-1.5" key={idx}>
             <div>
-              <div className="flex justify-between items-center gap-y-2 gap-x-4">
-                {project.url ? (
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-lg text-nowrap items-center gap-x-2">
-                    {project.name}
-                    <SquareArrowOutUpRight size={16} />
-                  </a>
-                ) : (
-                  <span className="text-lg font-medium">{project.name}</span>
-                )}
-                <span className="text-sm text-muted-foreground text-nowrap">{project.desc}</span>
+              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+                <div>
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-border underline-offset-4 hover:decoration-foreground">
+                      {project.name}
+                    </a>
+                  ) : (
+                    <span className="font-medium">{project.name}</span>
+                  )}
+                </div>
+                <span className="text-xs text-muted-foreground">{project.desc}</span>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">{project.detail}</p>
-              </div>
+              <p className="mt-1 text-base leading-6 text-muted-foreground">{project.detail}</p>
             </div>
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-wrap gap-1">
               {project.tags.map((tag, i) => (
                 <Badge key={i}>{tag}</Badge>
               ))}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
