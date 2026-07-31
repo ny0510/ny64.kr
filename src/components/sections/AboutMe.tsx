@@ -19,7 +19,7 @@ function renderParagraph(text: string) {
 
 export default function AboutMeSection() {
   return (
-    <section className="text-base text-pretty text-muted-foreground space-y-2">
+    <section className="space-y-1 text-base text-muted-foreground">
       {aboutMe.map((paragraph, idx) => (
         <p key={idx}>{renderParagraph(paragraph)}</p>
       ))}

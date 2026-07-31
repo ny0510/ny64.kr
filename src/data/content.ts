@@ -49,7 +49,8 @@ export const sideNotes: string[] = [
 ];
 
 export const header: HeaderMeta = {
-  email: 'me@ny64.kr',
+  name: '김가온',
+  username: 'ny64',
   tagline: 'Student Developer based in Incheon, Korea',
 };
 
@@ -61,6 +62,7 @@ export const socialLinks: SocialLink[] = [
   { href: 'https://github.com/ny0510', iconKey: 'github', label: 'GitHub' },
   { href: 'https://paypal.me/ny64', iconKey: 'paypal', label: 'Buy me a coffee' },
   { href: 'https://blog.ny64.kr', iconKey: 'blog', label: 'Blog' },
+  { href: 'mailto:me@ny64.kr', iconKey: 'email', label: 'me@ny64.kr' },
 ];
 
 export const education: Education[] = [

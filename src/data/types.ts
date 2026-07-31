@@ -14,7 +14,8 @@ export interface Project {
 }
 
 export interface HeaderMeta {
-  email: string;
+  name: string;
+  username: string;
   tagline: string;
 }
 
@@ -24,7 +25,7 @@ export interface FooterMeta {
 
 export interface SocialLink {
   href: string;
-  iconKey: 'github' | 'paypal' | 'blog';
+  iconKey: 'github' | 'paypal' | 'blog' | 'email';
   label: string;
 }
 
