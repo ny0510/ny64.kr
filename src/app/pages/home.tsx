@@ -9,7 +9,7 @@ import SideNotesSection from '@/components/sections/SideNotes';
 
 export default function Home() {
   return (
-    <main className="container mx-auto max-w-4xl space-y-8 px-5 py-10 sm:px-6 sm:py-14">
+    <main className="container mx-auto max-w-4xl space-y-7 px-4 py-8 text-pretty sm:space-y-8 sm:px-6 sm:py-14">
       <Header />
       <AboutMeSection />
       <ProjectsSection />

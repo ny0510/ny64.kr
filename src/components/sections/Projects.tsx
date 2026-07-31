@@ -10,7 +10,7 @@ export default function ProjectsSection() {
         {projects.map((project, idx) => (
           <article className="space-y-1.5" key={idx}>
             <div>
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+              <div className="flex flex-col items-start gap-y-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-x-4 sm:gap-y-1">
                 <div>
                   {project.url ? (
                     <a href={project.url} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-border underline-offset-4 hover:decoration-foreground">
