@@ -2,10 +2,12 @@ import '@/index.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import Home from '@/app/pages/home';
+import { DXTransition } from '@/components/DXTransition';
 
 export function App() {
   return (
     <ThemeProvider>
+      <DXTransition />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

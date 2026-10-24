@@ -1,0 +1,175 @@
+/* Adapted from white-aria DXTransition by Aira-Sakuranomiya, AGPL-3.0.
+   Modified 2026-10-24: scoped plain CSS and React-driven keyframe lifecycle.
+   Original geometry/SVGs retained; viewport aspect supplied by React.
+   Source and full license: shapes.tsx and LICENSE in this directory. */
+.dx-transition {
+  --dx-color-bg: #4ec0f8;
+  --dx-color-center: #c3ffff;
+  --dx-color-items-1: #fea3c1;
+  --dx-color-items-2: #fed821;
+  --dx-color-items-3: #fff;
+  --dx-color-items-4: #d2f1ff;
+  --dx-color-side-1: #a7eaff;
+  --dx-color-side-2: #fff;
+  --dx-duration: 600ms;
+  --dx-edge-duration: 500ms;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  isolation: isolate;
+}
+.dx-transition .dx-solid {
+  position: absolute;
+  inset: 0;
+  background: var(--dx-color-bg);
+}
+.dx-transition[data-phase='entering'] .dx-solid { animation: dx-fade-in var(--dx-duration) both; }
+.dx-transition[data-phase='leaving'] .dx-solid { display: none; }
+
+.dx-transition .dx-background {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.dx-transition .dx-background > div { display: flex; align-items: center; justify-content: center; }
+.dx-transition .dx-background-2 { transform: rotate(180deg); }
+.dx-transition .dx-background .dx-rectangle {
+  position: absolute;
+  transform: rotate(-45deg);
+  translate: -35.3% -35.3%;
+  width: 141.5vmax;
+  height: 141.5vmax;
+  background: var(--dx-color-bg);
+}
+.dx-transition .dx-background .dx-mosaic {
+  position: absolute;
+  transform: translate(2.7vmax, 2.7vmax);
+  width: 77vmax;
+  color: var(--dx-color-bg);
+}
+.dx-transition[data-phase='leaving'] .dx-background { opacity: 1; }
+.dx-transition[data-phase='leaving'] .dx-background > div {
+  animation: dx-background-out var(--dx-edge-duration) cubic-bezier(1, -.5, 1, 1) both;
+}
+
+.dx-transition .dx-items {
+  position: relative;
+  width: calc(61vmax * var(--dx-aspect, 1));
+  height: 100vmax;
+  scale: var(--dx-scale, 1);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dx-transition .dx-item { position: absolute; height: auto; }
+.dx-transition .dx-slide-1 {
+  width: 14vmax; color: var(--dx-color-items-1); right: -1%; bottom: -3.5vmax;
+  --dx-from: 44vmax; --dx-to: -102vmax;
+}
+.dx-transition .dx-slide-2 {
+  width: 12vmax; color: var(--dx-color-items-1); left: 18%; top: -13.5vmax;
+  --dx-from: 122vmax; --dx-to: -38vmax;
+}
+.dx-transition .dx-slide-3 {
+  width: 6.5vmax; color: var(--dx-color-items-2); right: 35%; top: 2vmax;
+  --dx-from: 38vmax; --dx-to: -44vmax; --dx-from-opacity: 0;
+}
+.dx-transition .dx-slide-4 {
+  width: 6.5vmax; color: var(--dx-color-items-3); left: 7%; top: 21vmax;
+  --dx-from: 38vmax; --dx-to: -44vmax; --dx-from-opacity: 0;
+}
+.dx-transition .dx-long-1 {
+  width: 12vmax; color: var(--dx-color-items-2); left: 0; bottom: -18vmax;
+  --dx-from: 45vmax; --dx-to: -118vmax;
+}
+.dx-transition .dx-long-2 {
+  width: 6vmax; color: var(--dx-color-items-3); right: 29%; bottom: -5.5vmax;
+  --dx-from: 38vmax; --dx-to: -44vmax; --dx-to-opacity: 0;
+}
+.dx-transition [class*='dx-hold-'] {
+  color: var(--dx-color-items-4); --dx-from-opacity: 0; --dx-to-opacity: 0;
+}
+.dx-transition .dx-hold-1 {
+  width: 11vmax; left: 20%; bottom: -83vmax; --dx-from: -28vmin; --dx-to: 58vmin;
+}
+.dx-transition .dx-hold-2 {
+  width: 6.5vmax; left: 36%; bottom: -53.3vmax; --dx-from: -14vmin; --dx-to: 30vmin;
+}
+.dx-transition .dx-hold-3 {
+  width: max(11vw, 7vh); right: 5%; bottom: -95vmax; --dx-from: -20vmin; --dx-to: 40vmin;
+}
+.dx-transition .dx-hold-4 {
+  width: 5.5vmax; right: 8%; top: -9vmax; --dx-from: -14vmin; --dx-to: 16vmin;
+}
+.dx-transition .dx-hold-5 {
+  width: 11vmax; right: 19%; top: -79vmax; --dx-from: -28vmin; --dx-to: 38vmin;
+}
+.dx-transition[data-phase='entering'] .dx-item {
+  animation: dx-item-in var(--dx-duration) cubic-bezier(0, 0, .1, 1) both;
+}
+.dx-transition[data-phase='leaving'] .dx-item {
+  animation: dx-item-out var(--dx-duration) cubic-bezier(.9, 0, 1, 1) both;
+}
+
+.dx-transition .dx-side { position: absolute; }
+.dx-transition .dx-side-1 { top: 0; left: 0; }
+.dx-transition .dx-side-2 { bottom: 0; right: 0; transform: rotate(180deg); }
+.dx-transition .dx-side > div:first-child { --dx-distance: -42vmax; }
+.dx-transition .dx-side > div:nth-child(2) { --dx-distance: -22vmax; }
+.dx-transition .dx-side .dx-rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-60%) translateX(-60%) rotate(-45deg);
+}
+.dx-transition .dx-side .dx-rectangle-1 {
+  width: 111vmin; height: 111vmin; background: var(--dx-color-side-1);
+}
+.dx-transition .dx-side .dx-rectangle-2 {
+  width: 100vmin; height: 85.5vmin; background: var(--dx-color-side-2);
+}
+.dx-transition .dx-side .dx-mosaic { position: absolute; left: -2vmin; }
+.dx-transition .dx-side .dx-mosaic-1 { width: 58vmin; color: var(--dx-color-side-1); }
+.dx-transition .dx-side .dx-mosaic-2 { width: 58.5vmin; color: var(--dx-color-side-2); }
+.dx-transition[data-phase='entering'] .dx-side > div {
+  animation: dx-side-in var(--dx-edge-duration) cubic-bezier(.3, 0, 0, 1) both;
+}
+.dx-transition[data-phase='leaving'] .dx-side > div {
+  animation: dx-side-out var(--dx-edge-duration) cubic-bezier(1, -.5, 1, 1) both;
+}
+
+.dx-transition .dx-center { position: absolute; width: 40vmin; height: 40vmin; flex-shrink: 0; }
+.dx-transition .dx-center-wrapper { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.dx-transition .dx-center svg { width: 100%; height: 100%; color: var(--dx-color-center); }
+.dx-transition[data-phase='entering'] .dx-center { animation: dx-center-turn var(--dx-duration) cubic-bezier(.3, 0, .7, 1) both; }
+.dx-transition[data-phase='entering'] .dx-center-wrapper { animation: dx-center-in var(--dx-duration) cubic-bezier(0, 0, 0, 1.15) both; }
+.dx-transition[data-phase='leaving'] .dx-center { animation: dx-fade-out var(--dx-duration) cubic-bezier(.3, 0, .7, 1) both; }
+.dx-transition[data-phase='leaving'] .dx-center-wrapper { animation: dx-center-out var(--dx-duration) cubic-bezier(1, -.2, .2, 1) both; }
+
+@keyframes dx-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dx-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes dx-background-out { from { translate: 0 0; } to { translate: -52vmax -52vmax; } }
+@keyframes dx-item-in { from { transform: translateY(var(--dx-from)); opacity: var(--dx-from-opacity, 1); } to { transform: translateY(0); opacity: 1; } }
+@keyframes dx-item-out { from { transform: translateY(0); opacity: 1; } to { transform: translateY(var(--dx-to)); opacity: var(--dx-to-opacity, 1); } }
+@keyframes dx-side-in { from { translate: var(--dx-distance) var(--dx-distance); } to { translate: 0 0; } }
+@keyframes dx-side-out { from { translate: 0 0; } to { translate: var(--dx-distance) var(--dx-distance); } }
+@keyframes dx-center-turn { from { rotate: -180deg; } to { rotate: 0deg; } }
+@keyframes dx-center-in { from { transform: scale(13); } to { transform: scale(1); } }
+@keyframes dx-center-out { from { transform: scale(1); } to { transform: scale(13); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .dx-transition { animation: dx-fade-in 150ms both; }
+  .dx-transition[data-phase='leaving'] { animation: dx-fade-out 150ms both; }
+  .dx-transition .dx-items, .dx-transition .dx-background, .dx-transition .dx-side { display: none; }
+  .dx-transition[data-phase] .dx-solid { display: block; animation: none; }
+  .dx-transition[data-phase] .dx-center, .dx-transition[data-phase] .dx-center-wrapper { animation: none; }
+}
