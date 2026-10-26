@@ -13,7 +13,7 @@ export default function ProjectsSection() {
               <div className="flex flex-col items-start gap-y-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-x-4 sm:gap-y-1">
                 <div className="flex flex-col items-start gap-y-1 sm:flex-row sm:items-center sm:gap-x-1.5">
                   {project.url ? (
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="font-medium underline decoration-border underline-offset-4 hover:decoration-foreground">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="font-medium">
                       {project.name}
                     </a>
                   ) : (
