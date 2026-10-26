@@ -67,6 +67,12 @@ export const sideNotes: string[] = [
   // 'AI/ML 관련 프로젝트가 아니라면 Python을 사용하지 않습니다. 공백만으로 블록을 구분하는 것을 좋아하지 않습니다.',
 ];
 
+export const maimaiProfile = {
+  name: 'ｎｙ６４',
+  friendCode: '101329383901487',
+  url: 'https://maimai.shiftpsh.com/profile/ny64/home',
+} as const;
+
 export const header: HeaderMeta = {
   name: '김가온',
   username: 'ny64',

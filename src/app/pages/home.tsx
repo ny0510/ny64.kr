@@ -6,6 +6,7 @@ import EducationSection from '@/components/sections/Education';
 import ProjectsSection from '@/components/sections/Projects';
 import AchievementsSection from '@/components/sections/Achievements';
 import SideNotesSection from '@/components/sections/SideNotes';
+import GamesSection from '@/components/sections/Games';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ProjectsSection />
       <AchievementsSection />
       <EducationSection />
+      <GamesSection />
       <SideNotesSection />
       <Footer />
     </main>
