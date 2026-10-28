@@ -44,7 +44,7 @@
   a:hover,
   a:focus-visible {
     color: var(--background);
-    text-decoration-color: currentColor;
+    text-decoration-color: var(--background);
   }
 
   a:hover::before,
@@ -69,6 +69,7 @@
   .games-section a:hover,
   .games-section a:focus-visible {
     color: inherit;
+    text-decoration-color: currentColor;
   }
 
   @media (prefers-reduced-motion: reduce) {

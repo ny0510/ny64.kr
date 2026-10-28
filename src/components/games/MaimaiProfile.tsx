@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Check } from 'lucide-react';
 import { GameProfileCard } from './GameProfileCard';
+import { EasterEggHint } from './EasterEggHint';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import ky from 'ky';
 import { maimaiProfile } from '@/data/content';
@@ -32,6 +33,7 @@ function getRatingLabel(state: RatingState): { readonly label: string; readonly 
 export function MaimaiProfile() {
   const [rating, setRating] = useState<RatingState>({ status: 'loading' });
   const [copyStatus, setCopyStatus] = useState<CopyStatus>('idle');
+  const [clickProgress, setClickProgress] = useState<readonly number[]>([]);
   const friendCodeRef = useRef<HTMLSpanElement>(null);
   const friendCodeClicks = useRef<readonly number[]>([]);
   const ratingLabel = getRatingLabel(rating);
@@ -57,9 +59,19 @@ export function MaimaiProfile() {
     return () => window.clearTimeout(timeout);
   }, [copyStatus]);
 
+  useEffect(() => {
+    if (clickProgress.length === 0) return;
+    const timeout = window.setTimeout(() => {
+      friendCodeClicks.current = [];
+      setClickProgress([]);
+    }, 2000);
+    return () => window.clearTimeout(timeout);
+  }, [clickProgress]);
+
   async function copyFriendCode() {
     const now = performance.now();
     friendCodeClicks.current = [...friendCodeClicks.current.filter((time) => now - time < 2000), now];
+    setClickProgress(friendCodeClicks.current);
     if (friendCodeClicks.current.length >= 5) {
       window.location.assign('/?maimai');
       return;
@@ -111,7 +123,7 @@ export function MaimaiProfile() {
       }>
       <div className="flex flex-wrap items-center gap-x-1">
         <p className="text-xs text-muted-foreground">친구 코드</p>
-        <span className="relative inline-flex">
+        <span className="relative isolate inline-flex">
           <button
             type="button"
             onClick={copyFriendCode}
@@ -130,6 +142,7 @@ export function MaimaiProfile() {
             aria-hidden="true"
             className={`pointer-events-none absolute -right-1 top-1/2 size-3 -translate-y-1/2 translate-x-full transition-opacity duration-150 sm:size-3.5 ${copyStatus === 'copied' ? 'opacity-100' : 'opacity-0'}`}
           />
+          <EasterEggHint progress={clickProgress.length} />
         </span>
       </div>
       {copyStatus === 'failed' && (
